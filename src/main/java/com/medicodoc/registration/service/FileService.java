@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 public interface FileService {
-    public String uploadFile(MultipartFile file, String username);
+    public String uploadFile(MultipartFile file, String username, String membername);
 
     public List<String> viewAllFiles(ViewFileData username);
 }

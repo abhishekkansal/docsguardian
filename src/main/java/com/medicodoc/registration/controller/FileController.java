@@ -20,12 +20,12 @@ public class FileController {
     @Autowired
     FileService fileService;
 
-    @PostMapping(value = "/upload/{username}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public FileResponse uploadUserFiles(@RequestPart MultipartFile documentUploaded, @RequestPart String username) {
+    @PostMapping(value = "/upload/{username}/{membername}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public FileResponse uploadUserFiles(@RequestPart MultipartFile documentUploaded, @RequestPart String username, @RequestPart String membername) {
         String response;
         FileResponse fileResponse = new FileResponse();
         try {
-            response = fileService.uploadFile(documentUploaded, username);
+            response = fileService.uploadFile(documentUploaded, username, membername);
             if(response.equalsIgnoreCase("success"))
                 fileResponse.setFileUploadStatus("Success");
             else

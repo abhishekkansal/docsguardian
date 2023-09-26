@@ -49,14 +49,14 @@ public class FileServiceImpl implements FileService {
     private S3Service s3Service;
 
     @Override
-    public String uploadFile(MultipartFile file, String username) {
+    public String uploadFile(MultipartFile file, String username, String membername) {
         String response;
         try {
 
             LocalDateTime localDateTime = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String formattedDateTime = localDateTime.format(formatter);
-            awsConfig.getS3Client().putObject(fileUploadBucketname, username+"/"+formattedDateTime+"_"+file.getOriginalFilename(), file.getInputStream(), null);
+            awsConfig.getS3Client().putObject(fileUploadBucketname, username+"/"+membername+"/"+formattedDateTime+"_"+file.getOriginalFilename(), file.getInputStream(), null);
             response = "success";
         } catch (Exception ex) {
             ex.printStackTrace();

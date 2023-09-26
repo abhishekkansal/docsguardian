@@ -69,6 +69,7 @@
         <input type="file" id="fileInput">
         <label for="fileInput" id="fileLabel">Choose File</label>
         <input type="text" id="username" placeholder="Username">
+        <input type="text" id="familymember" placeholder="Family Member Name">
         <button id="uploadButton">Upload</button>
     </div>
 
@@ -76,6 +77,7 @@
         const fileInput = document.getElementById('fileInput');
         const fileLabel = document.getElementById('fileLabel');
         const usernameInput = document.getElementById('username');
+        const membernameInput = document.getElementById('familymember');
         const uploadButton = document.getElementById('uploadButton');
 
         fileInput.addEventListener('change', () => {
@@ -90,14 +92,16 @@
         uploadButton.addEventListener('click', () => {
             const file = fileInput.files[0];
             const username = usernameInput.value.trim();
+            const membername = membernameInput.value.trim();
 
             if (file && username) {
                 const formData = new FormData();
                 formData.append('documentUploaded', file);
                 formData.append('username', username);
+                formData.append('membername', membername);
 
                 // Replace 'your_api_endpoint' with the actual API endpoint
-                const apiUrl = 'http://localhost:8080/upload/'+username;
+                const apiUrl = 'http://localhost:8080/upload/'+username+"/"+membername;
 
                 fetch(apiUrl, {
                     method: 'POST',
@@ -105,7 +109,7 @@
                 })
                 .then(response => {
                     console.log(response);
-                    if (response.fileUploadStatus=="Failed") {
+                    if (response.fileUploadStatus=="Success") {
                         alert('File uploaded successfully!');
                     } else {
                         alert('File upload failed. Please try again.');
