@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Our Website</h2>
+        <button id="loginButton">Login</button>
+        <button id="registerButton">Register</button>
+    </div>
+
+    <script>
+        // JavaScript to handle button clicks and navigate to respective pages
+        const loginButton = document.getElementById('loginButton');
+        const registerButton = document.getElementById('registerButton');
+
+        loginButton.addEventListener('click', function () {
+            // Redirect to the login page
+            window.location.href = 'loginPage.html'; // Replace with your login page URL
+        });
+
+        registerButton.addEventListener('click', function () {
+            // Redirect to the register page
+            window.location.href = 'register.html'; // Replace with your register page URL
+        });
+    </script>
+</body>
+</html>

@@ -7,5 +7,6 @@ import java.util.List;
 public interface RegistrationService {
 
     public String registerNewUser(RegistrationData registrationData);
+
     public List<RegistrationData> getUserDetails(String username);
 }

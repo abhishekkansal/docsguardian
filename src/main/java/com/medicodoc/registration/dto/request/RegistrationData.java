@@ -16,16 +16,16 @@ import javax.persistence.*;
 public class RegistrationData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id")
+    @Column(name = "id")
     private int id;
-    @Column(name ="username")
+    @Column(name = "username")
     private String username;
-    @Column(name ="email_id")
+    @Column(name = "email_id")
     private String email_id;
-    @Column(name ="first_name")
+    @Column(name = "first_name")
     private String first_name;
-    @Column(name ="last_name")
+    @Column(name = "last_name")
     private String last_name;
-    @Column(name ="password")
-    private String password ;
+    @Column(name = "password")
+    private String password;
 }

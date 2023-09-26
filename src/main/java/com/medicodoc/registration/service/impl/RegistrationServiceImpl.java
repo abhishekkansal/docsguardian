@@ -15,12 +15,14 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     @Autowired
     private RegistrationRepository registrationRepository;
+
     @Override
     public String registerNewUser(RegistrationData registrationData) {
 
         registrationRepository.save(registrationData);
         return "Registration Successful";
     }
+
     @Override
     public List<RegistrationData> getUserDetails(String username) {
         List<RegistrationData> regData = registrationRepository.getuserdetails(username);//.toString();

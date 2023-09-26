@@ -14,9 +14,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableAutoConfiguration
 public class RegistrationApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(RegistrationApplication.class, args);
-	}
+        SpringApplication.run(RegistrationApplication.class, args);
+    }
 
 }

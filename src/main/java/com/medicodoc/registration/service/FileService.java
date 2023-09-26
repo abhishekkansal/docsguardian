@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface FileService {
     public String uploadFile(MultipartFile file, String username);
+
     public List<String> viewAllFiles(ViewFileData username);
 }

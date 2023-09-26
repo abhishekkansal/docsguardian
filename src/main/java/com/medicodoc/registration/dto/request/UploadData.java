@@ -11,5 +11,5 @@ import lombok.*;
 @JsonIgnoreProperties
 public class UploadData {
     private String username;
-    private String password ;
+    private String password;
 }
