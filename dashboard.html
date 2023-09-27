@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Dashboard</h2>
+        <button id="viewDocuments">View Documents</button>
+        <button id="addMembers">Add Members</button>
+        <button id="uploadDocuments">Upload Documents</button>
+    </div>
+
+    <script>
+        const viewDocumentsButton = document.getElementById('viewDocuments');
+        const addMembersButton = document.getElementById('addMembers');
+        const uploadDocumentsButton = document.getElementById('uploadDocuments');
+
+        viewDocumentsButton.addEventListener('click', () => {
+            // Redirect to the "viewDoc.html" page
+            window.location.href = 'viewdoc.html';
+        });
+
+        addMembersButton.addEventListener('click', () => {
+            // Redirect to the "addMember.html" page
+            window.location.href = 'addmember.html';
+        });
+
+        uploadDocumentsButton.addEventListener('click', () => {
+            // Redirect to the "upload.html" page
+            window.location.href = 'upload.html';
+        });
+    </script>
+</body>
+</html>
